@@ -1,635 +1,894 @@
-/* =========================================
-   ВЫРУЧКА 2.0
-   ЧАСТЬ 1 — ОСНОВА И ШАПКА
-========================================= */
-
-:root {
-    --color-bg: #f4f2ed;
-    --color-surface: #ffffff;
-    --color-text: #111111;
-    --color-muted: #74736f;
-    --color-line: rgba(17, 17, 17, 0.14);
-    --color-accent: #ff4d00;
-
-    --container-width: 1320px;
-    --page-padding: 32px;
-
-    --radius-small: 16px;
-    --radius-medium: 28px;
-    --radius-large: 48px;
-
-    --transition: 0.35s ease;
-}
-
-/* Сброс стандартных стилей */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-
-    background: var(--color-bg);
-    color: var(--color-text);
-
-    font-family: "Manrope", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-
-    overflow-x: hidden;
-}
-
-body,
-button,
-input,
-textarea {
-    font-family: "Manrope", Arial, sans-serif;
-}
-
-img,
-svg {
-    display: block;
-    max-width: 100%;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    padding: 0;
-    border: 0;
-
-    background: transparent;
-    color: inherit;
-
-    cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-p {
-    margin-top: 0;
-}
-
-::selection {
-    background: var(--color-text);
-    color: var(--color-bg);
-}
-
-/* Основной контейнер */
-
-.container {
-    width: min(
-        calc(100% - var(--page-padding) * 2),
-        var(--container-width)
-    );
-
-    margin-right: auto;
-    margin-left: auto;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
 
-/* Общие элементы */
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-section {
-    position: relative;
-}
+    <meta
+        name="description"
+        content="Выручка — студия визуальных решений для бизнеса. Карточки для маркетплейсов, сайты, брендинг, презентации и рекламный креатив."
+    >
 
-.section-placeholder {
-    min-height: 35vh;
-    padding: 100px 0;
+    <meta
+        name="theme-color"
+        content="#f4f1ea"
+    >
 
-    border-top: 1px solid var(--color-line);
-}
+    <title>Выручка — студия визуальных решений</title>
 
-.section-placeholder p {
-    margin-bottom: 0;
-    color: var(--color-muted);
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* =========================================
-   ШАПКА
-========================================= */
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    width: 100%;
-    padding: 24px 0;
-}
+<body>
 
-.header__inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 30px;
-}
+    <!-- ШАПКА -->
+    <header class="header">
+        <div class="container header__inner">
 
-/* Логотип */
+            <a class="logo" href="#top" aria-label="Выручка — на главную">
+                ВЫРУЧКА
+            </a>
 
-.logo {
-    justify-self: start;
+            <nav class="nav" aria-label="Главное меню">
+                <a href="#cases">Портфолио</a>
+                <a href="#services">Услуги</a>
+                <a href="#prices">Цены</a>
+                <a href="#process">Как работаем</a>
+            </nav>
 
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.05em;
+            <a class="header__contact" href="#contact">
+                Обсудить проект
+            </a>
 
-    transition:
-        opacity var(--transition),
-        transform var(--transition);
-}
+        </div>
+    </header>
 
-.logo:hover {
-    opacity: 0.65;
-    transform: translateY(-1px);
-}
 
-/* Навигация */
+    <main id="top">
 
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 34px;
-}
+        <!-- ПЕРВЫЙ ЭКРАН -->
+        <section class="hero">
 
-.nav a {
-    position: relative;
+            <div class="container hero__inner">
 
-    padding: 10px 0;
+                <div class="hero__topline">
+                    <span>Студия визуальных решений</span>
+                    <span>Маркетплейсы · Сайты · Брендинг · Презентации</span>
+                </div>
 
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-}
+                <div class="hero__content">
 
-.nav a::after {
-    content: "";
+                    <h1 class="hero__title">
+                        Делаем бренды заметнее.
+                        <span>Продукты — понятнее.</span>
+                        <span>Продажи — увереннее.</span>
+                    </h1>
 
-    position: absolute;
-    right: 0;
-    bottom: 3px;
-    left: 0;
+                    <div class="hero__bottom">
 
-    height: 1px;
+                        <p class="hero__text">
+                            Упаковываем продукты и бизнес так, чтобы вас
+                            замечали, понимали и выбирали.
+                        </p>
 
-    background: currentColor;
+                        <div class="hero__actions">
 
-    transform: scaleX(0);
-    transform-origin: right center;
+                            <a
+                                class="button button--dark"
+                                href="#cases"
+                            >
+                                <span>Смотреть портфолио</span>
+                                <span aria-hidden="true">↓</span>
+                            </a>
 
-    transition: transform var(--transition);
-}
+                            <a
+                                class="button button--light"
+                                href="#contact"
+                            >
+                                <span>Обсудить проект</span>
+                                <span aria-hidden="true">↗</span>
+                            </a>
 
-.nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left center;
-}
+                        </div>
 
-/* Кнопка в шапке */
+                    </div>
 
-.header__contact {
-    justify-self: end;
+                </div>
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+                <div class="hero__services">
+                    <span>Карточки товаров</span>
+                    <span>Сайты</span>
+                    <span>Айдентика</span>
+                    <span>Презентации</span>
+                    <span>Рекламный креатив</span>
+                </div>
 
-    min-height: 50px;
-    padding: 0 24px;
+            </div>
 
-    border: 1px solid var(--color-line);
-    border-radius: 999px;
+        </section>
 
-    background: rgba(255, 255, 255, 0.45);
 
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1;
+        <!-- ПОРТФОЛИО -->
+        <section class="portfolio section" id="cases">
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+            <div class="container">
 
-    transition:
-        color var(--transition),
-        background-color var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
-}
+                <div class="section__head">
 
-.header__contact:hover {
-    border-color: var(--color-text);
+                    <div>
+                        <p class="section__number">01</p>
+                        <p class="section__label">Избранные проекты</p>
+                    </div>
 
-    background: var(--color-text);
-    color: var(--color-surface);
+                    <h2 class="section__title">
+                        Сначала работы.
+                        <span>Потом слова.</span>
+                    </h2>
 
-    transform: translateY(-2px);
-}
+                </div>
 
-/* Состояния клавиатурного фокуса */
 
-.logo:focus-visible,
-.nav a:focus-visible,
-.header__contact:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 5px;
-}/* =========================================
-   HERO
-========================================= */
+                <!-- ПРОЕКТ ROMULI -->
+                <article class="case case--large">
 
-.hero {
-    min-height: 100vh;
-    padding: 150px 0 34px;
+                    <div class="case__image">
+                        <img
+                            src="assets/images/romuli.jpg"
+                            alt="Дизайн карточек товара для интерьерного аромата Romuli"
+                            loading="lazy"
+                        >
+                    </div>
 
-    display: flex;
-    align-items: stretch;
-}
+                    <div class="case__info">
 
-.hero__inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+                        <div class="case__heading">
+                            <p class="case__number">01</p>
+                            <h3>Rómuli</h3>
+                        </div>
 
-    min-height: calc(100vh - 184px);
-}
+                        <div class="case__details">
 
-/* Верхняя строка */
+                            <div>
+                                <p class="case__caption">Задача</p>
 
-.hero__topline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+                                <p>
+                                    Создать премиальную визуальную подачу
+                                    интерьерного аромата и передать атмосферу
+                                    продукта через карточки товара.
+                                </p>
+                            </div>
 
-    padding-bottom: 28px;
+                            <div>
+                                <p class="case__caption">Что сделали</p>
 
-    border-bottom: 1px solid var(--color-line);
+                                <p>
+                                    Разработали концепцию, композицию,
+                                    инфографику и единую систему экранов.
+                                </p>
+                            </div>
 
-    color: var(--color-muted);
+                        </div>
 
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.4;
-}
+                    </div>
 
-/* Основной контент */
+                </article>
 
-.hero__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
-    flex: 1;
+                <!-- ПРОЕКТЫ СУМКА И ЧАСЫ -->
+                <div class="case-grid">
 
-    padding: 70px 0;
-}
+                    <article class="case">
 
-.hero__title {
-    max-width: 1230px;
-    margin-bottom: 64px;
+                        <div class="case__image case__image--portrait">
+                            <img
+                                src="assets/images/bag.jpg"
+                                alt="Дизайн карточки товара для женской сумки"
+                                loading="lazy"
+                            >
+                        </div>
 
-    font-size: clamp(58px, 7.4vw, 118px);
-    font-weight: 700;
-    line-height: 0.92;
-    letter-spacing: -0.075em;
-}
+                        <div class="case__info case__info--compact">
 
-.hero__title span {
-    display: block;
-}
+                            <div class="case__heading">
+                                <p class="case__number">02</p>
+                                <h3>Сумка-багет</h3>
+                            </div>
 
-.hero__title span:nth-child(1) {
-    margin-left: 8%;
-}
+                            <p>
+                                Современная fashion-подача с акцентом
+                                на форму, детали и характер товара.
+                            </p>
 
-.hero__title span:nth-child(2) {
-    margin-left: 18%;
-}
+                        </div>
 
-/* Нижняя часть Hero */
+                    </article>
 
-.hero__bottom {
-    display: grid;
-    grid-template-columns: minmax(260px, 430px) auto;
-    align-items: end;
-    justify-content: space-between;
-    gap: 60px;
-}
 
-.hero__text {
-    margin-bottom: 0;
+                    <article class="case">
 
-    color: var(--color-muted);
+                        <div class="case__image case__image--portrait">
+                            <img
+                                src="assets/images/watch.jpg"
+                                alt="Дизайн карточки товара для наручных часов"
+                                loading="lazy"
+                            >
+                        </div>
 
-    font-size: 17px;
-    line-height: 1.65;
-}
+                        <div class="case__info case__info--compact">
 
-/* Главная кнопка */
+                            <div class="case__heading">
+                                <p class="case__number">03</p>
+                                <h3>Часы</h3>
+                            </div>
 
-.hero__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 42px;
+                            <p>
+                                Строгая визуальная система, подчёркивающая
+                                качество, детали и статус продукта.
+                            </p>
 
-    min-width: 240px;
-    min-height: 68px;
-    padding: 0 26px;
+                        </div>
 
-    border-radius: 999px;
+                    </article>
 
-    background: var(--color-accent);
-    color: var(--color-surface);
+                </div>
 
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1;
 
-    transition:
-        background-color var(--transition),
-        color var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
-}
+                <!-- ПРОЕКТ ПЫЛЕСОС -->
+                <article class="case case--large">
 
-.hero__button span:last-child {
-    font-size: 24px;
-    line-height: 1;
+                    <div class="case__image">
+                        <img
+                            src="assets/images/vacuum.jpg"
+                            alt="Дизайн карточек товара для пылесоса"
+                            loading="lazy"
+                        >
+                    </div>
 
-    transition: transform var(--transition);
-}
+                    <div class="case__info">
 
-.hero__button:hover {
-    background: var(--color-text);
+                        <div class="case__heading">
+                            <p class="case__number">04</p>
+                            <h3>Бытовая техника</h3>
+                        </div>
 
-    transform: translateY(-3px);
+                        <div class="case__details">
 
-    box-shadow: 0 18px 40px rgba(17, 17, 17, 0.16);
-}
+                            <div>
+                                <p class="case__caption">Задача</p>
 
-.hero__button:hover span:last-child {
-    transform: translate(3px, -3px);
-}
+                                <p>
+                                    Показать функции устройства быстро,
+                                    наглядно и без перегруженной инфографики.
+                                </p>
+                            </div>
 
-.hero__button:focus-visible {
-    outline: 2px solid var(--color-text);
-    outline-offset: 5px;
-}
+                            <div>
+                                <p class="case__caption">Что изменилось</p>
 
-/* Направления студии */
+                                <p>
+                                    Преимущества получили понятную иерархию,
+                                    а серия — технологичный единый стиль.
+                                </p>
+                            </div>
 
-.hero__services {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+                        </div>
 
-    border-top: 1px solid var(--color-line);
-    border-bottom: 1px solid var(--color-line);
-}
+                    </div>
 
-.hero__services span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                </article>
 
-    min-height: 78px;
-    padding: 16px;
 
-    border-right: 1px solid var(--color-line);
+                <!-- ДО / ПОСЛЕ -->
+                <article class="before-after">
 
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
+                    <div class="before-after__head">
 
-    transition:
-        background-color var(--transition),
-        color var(--transition);
-}
+                        <div>
+                            <p class="case__number">05</p>
+                            <h3>Winterra</h3>
+                        </div>
 
-.hero__services span:first-child {
-    border-left: 1px solid var(--color-line);
-}
+                        <p>
+                            Редизайн карточки товара:
+                            от перегруженной подачи к понятной системе.
+                        </p>
 
-.hero__services span:hover {
-    background: var(--color-text);
-    color: var(--color-surface);
-}/* =========================================
-   АДАПТИВНОСТЬ
-========================================= */
+                    </div>
 
-@media (max-width: 1100px) {
-    :root {
-        --page-padding: 24px;
-    }
+                    <div class="before-after__grid">
 
-    .hero__title {
-        font-size: clamp(54px, 8.5vw, 92px);
-    }
+                        <figure class="comparison">
 
-    .hero__title span:nth-child(1) {
-        margin-left: 4%;
-    }
+                            <figcaption>До</figcaption>
 
-    .hero__title span:nth-child(2) {
-        margin-left: 10%;
-    }
+                            <div class="comparison__image">
+                                <img
+                                    src="assets/images/winterra-before.jpg"
+                                    alt="Карточка Winterra до редизайна"
+                                    loading="lazy"
+                                >
+                            </div>
 
-    .hero__bottom {
-        grid-template-columns: minmax(260px, 400px) auto;
-        gap: 40px;
-    }
-}
+                        </figure>
 
-@media (max-width: 820px) {
-    .header {
-        padding: 18px 0;
-    }
 
-    .header__inner {
-        grid-template-columns: 1fr auto;
-    }
+                        <figure class="comparison comparison--after">
 
-    .nav {
-        display: none;
-    }
+                            <figcaption>После</figcaption>
 
-    .header__contact {
-        min-height: 44px;
-        padding: 0 18px;
-    }
+                            <div class="comparison__image">
+                                <img
+                                    src="assets/images/winterra-after.jpg"
+                                    alt="Карточка Winterra после редизайна"
+                                    loading="lazy"
+                                >
+                            </div>
 
-    .hero {
-        min-height: auto;
-        padding: 120px 0 24px;
-    }
+                        </figure>
 
-    .hero__inner {
-        min-height: auto;
-    }
+                    </div>
 
-    .hero__topline {
-        align-items: flex-start;
-        padding-bottom: 20px;
-    }
+                    <div class="before-after__result">
 
-    .hero__topline span:last-child {
-        max-width: 180px;
-        text-align: right;
-    }
+                        <p class="case__caption">Что изменилось</p>
 
-    .hero__content {
-        padding: 56px 0;
-    }
+                        <div>
+                            <p>Понятнее визуальная иерархия.</p>
+                            <p>Сильнее раскрыты преимущества.</p>
+                            <p>Серия выглядит современно и целостно.</p>
+                        </div>
 
-    .hero__title {
-        margin-bottom: 48px;
+                    </div>
 
-        font-size: clamp(48px, 11vw, 82px);
-        line-height: 0.96;
-    }
+                </article>
 
-    .hero__title span:nth-child(1),
-    .hero__title span:nth-child(2) {
-        margin-left: 0;
-    }
+            </div>
 
-    .hero__bottom {
-        grid-template-columns: 1fr;
-        align-items: start;
-        gap: 28px;
-    }
+        </section>
 
-    .hero__text {
-        max-width: 520px;
-    }
 
-    .hero__button {
-        justify-self: start;
-    }
+        <!-- УСЛУГИ -->
+        <section class="services section" id="services">
 
-    .hero__services {
-        grid-template-columns: repeat(2, 1fr);
-    }
+            <div class="container">
 
-    .hero__services span {
-        min-height: 68px;
+                <div class="section__head">
 
-        border-bottom: 1px solid var(--color-line);
-    }
-
-    .hero__services span:nth-child(2n) {
-        border-right: 1px solid var(--color-line);
-    }
-
-    .hero__services span:last-child {
-        grid-column: 1 / -1;
-    }
-}
-
-@media (max-width: 560px) {
-    :root {
-        --page-padding: 16px;
-    }
-
-    .header__contact {
-        min-height: 42px;
-        padding: 0 15px;
-
-        font-size: 12px;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .hero {
-        padding-top: 106px;
-    }
-
-    .hero__topline {
-        flex-direction: column;
-        gap: 8px;
-
-        font-size: 11px;
-    }
-
-    .hero__topline span:last-child {
-        max-width: none;
-        text-align: left;
-    }
-
-    .hero__content {
-        padding: 44px 0;
-    }
-
-    .hero__title {
-        margin-bottom: 36px;
-
-        font-size: clamp(42px, 13vw, 64px);
-        line-height: 0.98;
-        letter-spacing: -0.065em;
-    }
-
-    .hero__text {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .hero__button {
-        width: 100%;
-        min-width: 0;
-        min-height: 60px;
-    }
-
-    .hero__services {
-        grid-template-columns: 1fr;
-    }
-
-    .hero__services span,
-    .hero__services span:first-child {
-        min-height: 58px;
-
-        border-right: 1px solid var(--color-line);
-        border-left: 1px solid var(--color-line);
-    }
-
-    .hero__services span:last-child {
-        grid-column: auto;
-    }
-
-    .section-placeholder {
-        min-height: 24vh;
-        padding: 70px 0;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-    }
-}
+                    <div>
+                        <p class="section__number">02</p>
+                        <p class="section__label">Что мы делаем</p>
+                    </div>
+
+                    <h2 class="section__title">
+                        Решаем конкретную задачу.
+                        <span>Не продаём дизайн ради дизайна.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="services__list">
+
+                    <article class="service">
+
+                        <p class="service__number">01</p>
+
+                        <div class="service__main">
+                            <h3>Маркетплейсы</h3>
+
+                            <p>
+                                Главные изображения, инфографика,
+                                серия карточек и rich-контент.
+                            </p>
+                        </div>
+
+                        <div class="service__result">
+                            <span>Для чего</span>
+
+                            <p>
+                                Чтобы покупатель быстрее понял товар,
+                                увидел преимущества и отличия от конкурентов.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="service">
+
+                        <p class="service__number">02</p>
+
+                        <div class="service__main">
+                            <h3>Сайты</h3>
+
+                            <p>
+                                Лендинги, сайты-портфолио,
+                                сайты компаний и брендов.
+                            </p>
+                        </div>
+
+                        <div class="service__result">
+                            <span>Для чего</span>
+
+                            <p>
+                                Чтобы понятно представить предложение,
+                                вызвать доверие и получить обращения.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="service">
+
+                        <p class="service__number">03</p>
+
+                        <div class="service__main">
+                            <h3>Брендинг</h3>
+
+                            <p>
+                                Логотип, цветовая система,
+                                типографика и элементы айдентики.
+                            </p>
+                        </div>
+
+                        <div class="service__result">
+                            <span>Для чего</span>
+
+                            <p>
+                                Чтобы бизнес выглядел узнаваемо,
+                                последовательно и профессионально.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="service">
+
+                        <p class="service__number">04</p>
+
+                        <div class="service__main">
+                            <h3>Презентации</h3>
+
+                            <p>
+                                Коммерческие предложения,
+                                каталоги и деловые презентации.
+                            </p>
+                        </div>
+
+                        <div class="service__result">
+                            <span>Для чего</span>
+
+                            <p>
+                                Чтобы сложная информация воспринималась
+                                быстро и убедительно.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="service">
+
+                        <p class="service__number">05</p>
+
+                        <div class="service__main">
+                            <h3>Креатив</h3>
+
+                            <p>
+                                Баннеры, рекламные макеты,
+                                обложки и материалы для продвижения.
+                            </p>
+                        </div>
+
+                        <div class="service__result">
+                            <span>Для чего</span>
+
+                            <p>
+                                Чтобы привлекать внимание и сохранять
+                                единый образ бренда во всех каналах.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ЦЕНЫ -->
+        <section class="prices section" id="prices">
+
+            <div class="container">
+
+                <div class="section__head">
+
+                    <div>
+                        <p class="section__number">03</p>
+                        <p class="section__label">Стоимость</p>
+                    </div>
+
+                    <h2 class="section__title">
+                        Понятный состав работы.
+                        <span>Без скрытых этапов.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="prices__grid">
+
+                    <article class="price-card">
+
+                        <p class="price-card__category">
+                            Маркетплейсы
+                        </p>
+
+                        <h3>Карточка товара</h3>
+
+                        <p class="price-card__price">
+                            от 5 000 ₽
+                        </p>
+
+                        <ul>
+                            <li>Анализ товара и конкурентов</li>
+                            <li>Главное изображение</li>
+                            <li>Инфографика</li>
+                            <li>Подготовка файлов</li>
+                        </ul>
+
+                        <a href="#contact">
+                            Узнать точную стоимость ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="price-card price-card--accent">
+
+                        <p class="price-card__category">
+                            Сайты
+                        </p>
+
+                        <h3>Сайт под ключ</h3>
+
+                        <p class="price-card__price">
+                            от 30 000 ₽
+                        </p>
+
+                        <ul>
+                            <li>Структура и прототип</li>
+                            <li>Тексты и дизайн</li>
+                            <li>Адаптация для телефона</li>
+                            <li>Публикация сайта</li>
+                        </ul>
+
+                        <a href="#contact">
+                            Обсудить сайт ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="price-card">
+
+                        <p class="price-card__category">
+                            Брендинг
+                        </p>
+
+                        <h3>Визуальный стиль</h3>
+
+                        <p class="price-card__price">
+                            от 15 000 ₽
+                        </p>
+
+                        <ul>
+                            <li>Логотип или знак</li>
+                            <li>Цветовая палитра</li>
+                            <li>Шрифтовая система</li>
+                            <li>Фирменные элементы</li>
+                        </ul>
+
+                        <a href="#contact">
+                            Обсудить брендинг ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="price-card">
+
+                        <p class="price-card__category">
+                            Презентации
+                        </p>
+
+                        <h3>Презентация</h3>
+
+                        <p class="price-card__price">
+                            от 10 000 ₽
+                        </p>
+
+                        <ul>
+                            <li>Структура материала</li>
+                            <li>Визуальная концепция</li>
+                            <li>Дизайн слайдов</li>
+                            <li>Редактируемый файл</li>
+                        </ul>
+
+                        <a href="#contact">
+                            Рассчитать проект ↗
+                        </a>
+
+                    </article>
+
+                </div>
+
+                <p class="prices__note">
+                    Итоговая стоимость зависит от объёма, сложности
+                    и сроков. Перед началом работы фиксируем состав
+                    проекта и цену.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ЧТО ПОЛУЧИТ КЛИЕНТ -->
+        <section class="benefits section" id="about">
+
+            <div class="container">
+
+                <div class="section__head">
+
+                    <div>
+                        <p class="section__number">04</p>
+                        <p class="section__label">Что вы получаете</p>
+                    </div>
+
+                    <h2 class="section__title">
+                        Не просто красивые макеты.
+                        <span>Готовое решение для бизнеса.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="benefits__grid">
+
+                    <article class="benefit">
+                        <span>01</span>
+
+                        <h3>Понятную подачу</h3>
+
+                        <p>
+                            Клиент быстрее понимает предложение,
+                            характеристики и ценность продукта.
+                        </p>
+                    </article>
+
+
+                    <article class="benefit">
+                        <span>02</span>
+
+                        <h3>Сильный образ</h3>
+
+                        <p>
+                            Бизнес выглядит современно,
+                            профессионально и увереннее конкурентов.
+                        </p>
+                    </article>
+
+
+                    <article class="benefit">
+                        <span>03</span>
+
+                        <h3>Готовые материалы</h3>
+
+                        <p>
+                            Передаём файлы в нужных форматах,
+                            подготовленные для публикации и использования.
+                        </p>
+                    </article>
+
+
+                    <article class="benefit">
+                        <span>04</span>
+
+                        <h3>Единую систему</h3>
+
+                        <p>
+                            Все элементы работают вместе
+                            и сохраняют узнаваемый стиль бренда.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ПРОЦЕСС -->
+        <section class="process section" id="process">
+
+            <div class="container">
+
+                <div class="section__head">
+
+                    <div>
+                        <p class="section__number">05</p>
+                        <p class="section__label">Как проходит работа</p>
+                    </div>
+
+                    <h2 class="section__title">
+                        От первого сообщения
+                        <span>до готового результата.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="process__list">
+
+                    <article class="process-step">
+
+                        <p>01</p>
+
+                        <div>
+                            <h3>Обсуждаем задачу</h3>
+
+                            <p>
+                                Вы рассказываете о продукте, бизнесе,
+                                целях, сроках и необходимых материалах.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="process-step">
+
+                        <p>02</p>
+
+                        <div>
+                            <h3>Фиксируем стоимость</h3>
+
+                            <p>
+                                Определяем состав работы, сроки,
+                                количество материалов и итоговую цену.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="process-step">
+
+                        <p>03</p>
+
+                        <div>
+                            <h3>Создаём направление</h3>
+
+                            <p>
+                                Изучаем конкурентов, продумываем структуру
+                                и показываем визуальную концепцию.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="process-step">
+
+                        <p>04</p>
+
+                        <div>
+                            <h3>Передаём результат</h3>
+
+                            <p>
+                                Дорабатываем проект после согласования
+                                и подготавливаем готовые файлы.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- КОНТАКТЫ -->
+        <section class="contact section" id="contact">
+
+            <div class="container contact__inner">
+
+                <p class="contact__label">
+                    Есть задача?
+                </p>
+
+                <h2>
+                    Покажем, как можно
+                    <span>усилить ваш проект.</span>
+                </h2>
+
+                <p class="contact__text">
+                    Пришлите текущие материалы и кратко расскажите,
+                    что нужно сделать. Ответим, зададим уточняющие
+                    вопросы и рассчитаем стоимость.
+                </p>
+
+                <div class="contact__actions">
+
+                    <a
+                        class="button button--dark"
+                        href="https://t.me/USERNAME"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>Написать в Telegram</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a
+                        class="contact__email"
+                        href="mailto:hello@example.com"
+                    >
+                        hello@example.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+
+        <div class="container footer__inner">
+
+            <a class="logo" href="#top">
+                ВЫРУЧКА
+            </a>
+
+            <p>
+                Студия визуальных решений для бизнеса
+            </p>
+
+            <p>
+                © <span id="current-year">2026</span>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
