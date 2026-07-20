@@ -1,0 +1,49 @@
+/* ==========================
+   ВЫРУЧКА 2.0
+   ========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Manrope',sans-serif;
+
+    background:#F7F7F5;
+
+    color:#111;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+.container{
+
+    width:min(1280px,92%);
+    margin:auto;
+
+}
