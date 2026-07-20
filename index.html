@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Выручка — студия визуальных решений</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Делаем бренды заметнее. Продукты — понятнее. Продажи — увереннее."
+        content="Выручка — студия визуальных решений для бизнеса. Брендинг, сайты, маркетплейсы, презентации и креатив."
     >
+
+    <title>Выручка — студия визуальных решений</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,14 +28,15 @@
 
 <body>
 
+    <!-- Шапка сайта -->
     <header class="header">
         <div class="container header__inner">
 
-            <a class="logo" href="#" aria-label="Выручка — на главную">
+            <a class="logo" href="#top" aria-label="Выручка — на главную">
                 ВЫРУЧКА
             </a>
 
-            <nav class="nav" aria-label="Основная навигация">
+            <nav class="nav" aria-label="Главное меню">
                 <a href="#services">Услуги</a>
                 <a href="#cases">Кейсы</a>
                 <a href="#about">О студии</a>
@@ -45,10 +49,12 @@
         </div>
     </header>
 
-    <main>
+    <main id="top">
 
+        <!-- Первый экран -->
         <section class="hero">
-            <div class="container hero__container">
+
+            <div class="container hero__inner">
 
                 <div class="hero__topline">
                     <span>Студия визуальных решений</span>
@@ -58,15 +64,16 @@
                 <div class="hero__content">
 
                     <h1 class="hero__title">
-                        Делаем бренды
-                        <span>заметнее.</span>
+                        Делаем бренды заметнее.
+                        <span>Продукты — понятнее.</span>
+                        <span>Продажи — увереннее.</span>
                     </h1>
 
                     <div class="hero__bottom">
 
-                        <p class="hero__description">
-                            Продукты — понятнее.<br>
-                            Продажи — увереннее.
+                        <p class="hero__text">
+                            Создаём дизайн, который помогает бизнесу выделяться,
+                            объяснять ценность продукта и увереннее продавать.
                         </p>
 
                         <a class="hero__button" href="#contact">
@@ -78,7 +85,7 @@
 
                 </div>
 
-                <div class="hero__directions" id="services">
+                <div class="hero__services" id="services">
                     <span>Маркетплейсы</span>
                     <span>Сайты</span>
                     <span>Брендинг</span>
@@ -87,11 +94,31 @@
                 </div>
 
             </div>
+
+        </section>
+
+        <!-- Заглушки для будущих разделов -->
+        <section class="section-placeholder" id="cases">
+            <div class="container">
+                <p>Кейсы появятся на следующем этапе.</p>
+            </div>
+        </section>
+
+        <section class="section-placeholder" id="about">
+            <div class="container">
+                <p>Раздел о студии появится на следующем этапе.</p>
+            </div>
+        </section>
+
+        <section class="section-placeholder" id="contact">
+            <div class="container">
+                <p>Контактный блок появится на следующем этапе.</p>
+            </div>
         </section>
 
     </main>
 
     <script src="assets/js/script.js"></script>
-</body>
 
+</body>
 </html>
